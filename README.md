@@ -124,3 +124,12 @@ src/
 | **Vite** | Lightning-fast development server and bundle optimization |
 | **Tailwind CSS** | Design system utility layer |
 | **Google Fonts** | Professional web typography (Inter) |
+
+---
+
+## 👤 Author
+
+* **Rajul Mishra**
+* **GitHub**: [@beyonder07](https://github.com/beyonder07)
+* **Email**: mrajul1234@gmail.com
+* **Repository**: [KoinxAssignment](https://github.com/beyonder07/KoinxAssignment)
