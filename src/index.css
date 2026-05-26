@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --bg-page: #080b11;
+  --bg-card-pre: #111827;
+  --bg-card-after: #0f2356;
+  --bg-card-after-deep: #0a1a42;
+  --border-divider: #1f2937;
+  --border-card-after: #1e3a8a;
+  --row-hover: #161e2e;
+  --selected-row: #0f1f3d;
+  --selected-border: #2563eb;
+
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #4b5563;
+  --text-link: #3b82f6;
+
+  --color-gain: #10b981;
+  --color-gain-bg: rgba(16, 185, 129, 0.08);
+  --color-gain-border: rgba(16, 185, 129, 0.2);
+  --color-loss: #ef4444;
+  --color-loss-bg: rgba(239, 68, 68, 0.08);
+
+  --checkbox-active: #2563eb;
+
+  --card-padding: 24px;
+  --row-height: 64px;
+  --border-radius-lg: 12px;
+  --border-radius-sm: 8px;
+  --gap-md: 20px;
+}
+
+/* ═══════════════════════════════════════════
+   BASE RESET
+═══════════════════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   SKELETON SHIMMER
+═══════════════════════════════════════════ */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #1a2235 25%,
+    #222d42 50%,
+    #1a2235 75%
+  );
+  background-size: 1200px 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 6px;
+}
+
+/* ═══════════════════════════════════════════
+   DISCLAIMER ACCORDION
+═══════════════════════════════════════════ */
+.disclaimer-body {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+.disclaimer-body.open {
+  max-height: 800px;
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   TABLE TRANSITIONS
+═══════════════════════════════════════════ */
+.table-row-transition {
+  transition: background-color 0.12s ease,
+              border-color 0.12s ease;
+}
+
+/* ═══════════════════════════════════════════
+   CHECKBOX ACCENT
+═══════════════════════════════════════════ */
+input[type='checkbox'] {
+  accent-color: var(--checkbox-active);
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* ═══════════════════════════════════════════
+   CARD SUBTLE GLOW — After Harvesting
+═══════════════════════════════════════════ */
+.card-after-glow {
+  box-shadow:
+    0 0 0 1px var(--border-card-after),
+    0 4px 24px rgba(37, 99, 235, 0.08);
+}
+
+.card-pre-shadow {
+  box-shadow:
+    0 0 0 1px var(--border-divider),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   SAVINGS BADGE GLOW
+═══════════════════════════════════════════ */
+.savings-badge {
+  animation: badge-pop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes badge-pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════
+   VIEW ALL BUTTON
+═══════════════════════════════════════════ */
+.view-all-btn {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.view-all-btn:hover {
+  background-color: var(--row-hover) !important;
+  color: #60a5fa !important;
+}
