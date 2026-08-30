@@ -35,3 +35,7 @@
 ### 8/6/2026 - RESTful API Rate Limiting and Security Headers
 - Completed learning segment on: *Refactored asynchronous operations using modern error handling practices.*
 - Sandbox action completed: `Refined README stats layout with progress bars.`
+
+### 8/30/2026 - Redis Caching & Pub-Sub Mechanisms
+- Completed learning segment on: *Configured and optimized local background worker schedules.*
+- Sandbox action completed: `Updated logger service to support file stream rotations.`
